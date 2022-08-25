@@ -12,4 +12,4 @@ const showOnPage = function (text) {
   //function two: Am I expecting something?
   //print message indicating whether to be on the lookout for packages or not.
 
-  showOnPage('Hello World')
+  showOnPage('<b>Testy<b>')
