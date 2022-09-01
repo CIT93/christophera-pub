@@ -8,21 +8,21 @@ const showOnPage = function (text) {
   showOnPage('<b>Is It Study Time?<b>')
   showOnPage('~~~~~~~')
 
-let Studying = {
+const studying = {
 myName: 'Christopher Acosta',
+studyMusic: 'https://www.youtube.com/watch?v=e97w-GHsRMY',
 time: 12,
 
-let getTime = function (time) {
+let: getTime = function (time) {
   if (time >= 9 <= 17) {
-      return showOnPage(`Hello, ${myName}. It is currently study time. Here is the link to some studying music: https://www.youtube.com/watch?v=e97w-GHsRMY`)
+      return showOnPage('It is currently studying time')
   } else if (time <= 8 >= 18) {
       showOnPage(`It is currently not study time. Go have some fun or do something else!`)
   }
 }
 }
 
-showOnPage(getTime)
-console.log(getTime)
+showOnPage(`It is currently ${studying.time}. Here's a link to some music for studying and chilling: ${studying.studyMusic}`)
   
   //let studyTime = function (study) {
 
@@ -39,8 +39,6 @@ console.log(getTime)
     
     //    return `It is currently ${timeMessage}`
    // }
-
- 
 
 showOnPage('~~~~~~~')
 showOnPage('Make sure your water bottle is filled, and stay hydrated')
