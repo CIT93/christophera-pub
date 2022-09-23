@@ -1,15 +1,7 @@
-const showOnPage = function (text) {
-    let newParagraph = document.createElement("p")
-    newParagraph.innerHTML = text
-    let outputDiv = document.getElementById("output")
-    outputDiv.append(newParagraph)
-  }
+    function studyTime() {
+        time = 7
+        timeMessage = ''
 
-  const studyTime = function () {
-
-    const time = 7
-    timeMessage = ''
-    
     if (time >= 9) {
         timeMessage = 'study time. Here is the link to some studying music: https://www.youtube.com/watch?v=e97w-GHsRMY'
         } else if (time === 12) {
@@ -20,11 +12,20 @@ const showOnPage = function (text) {
         timeMessage = 'study time. Here is the link to some studying music: https://www.youtube.com/watch?v=e97w-GHsRMY'
         }
     
-        return showOnPage(`It is currently ${timeMessage}`)
+        return timeMessage
+
     }
     
-    studyTime()
+    const showTime = document.createElement('h1')
+    showTime.innerText = `It is currently ${studyTime()}`
+    document.body.appendChild(showTime)
+    
+    const assignments = ['devX', 'learnTogetherX', 'CodeAlongX', 'caseStudyX']
 
-     const assignments = ['devX', 'learnTogetherX', 'CodeAlongX', 'caseStudyX']
+    let toDoDisplay = document.createElement('button')
+    toDoDisplay.innerHTML = 'Number of Things To Do'
+    document.body.appendChild(toDoDisplay)
 
-     showOnPage(`You currently have ${assignments.length} assignments to do.`)
+    toDoDisplay.addEventListener('click', function () {
+        alert(`You currently have ${assignments.length} things to do.`)
+    })
