@@ -23,7 +23,15 @@ function studyTime() {
   
   const assignments = ["devX", "learnTogetherX", "CodeAlongX", "caseStudyX"];
   
+  let toDoDisplay = document.createElement("button");
+  toDoDisplay.innerHTML = "Number of Things To Do";
+  document.body.appendChild(toDoDisplay);
   
+  toDoDisplay.addEventListener("click", function () {
+    const todoValue = document.createElement("h1");
+    todoValue.innerHTML = `You have ${assignments.length} things left to do`;
+    document.body.appendChild(todoValue);
+  });
   
   document.querySelector('#name-input-text').addEventListener('submit', function (you) {
     you.preventDefault()
@@ -31,16 +39,6 @@ function studyTime() {
     userGreeting.innerHTML = `Welcome, ${you.target.elements.userName.value}. I hope you are having a good day today.`
     document.body.appendChild(userGreeting)
   })
-
-  let toDoDisplay = document.createElement("button");
-  toDoDisplay.innerHTML = "Number of Things To Do";
-  document.body.appendChild(toDoDisplay);
-  
-  toDoDisplay.addEventListener("click", function () {
-    const todoValue = document.createElement("h1");
-    todoValue.innerHTML = `You have ${assignments.length} things left to do.`;
-    document.body.appendChild(todoValue);
-  });
 
   const waterCheck = document.createElement("h1")
   waterCheck.innerHTML = 'Make sure you have water. Stay hydrated!'
