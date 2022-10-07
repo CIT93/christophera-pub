@@ -1,25 +1,4 @@
-function studyTime() {
-  time = 7;
-  timeMessage = "";
-
-  if (time >= 9) {
-    timeMessage =
-      "study time. Here is the link to some studying music: https://www.youtube.com/watch?v=e97w-GHsRMY";
-  } else if (time === 12) {
-    timeMessage = "lunch time. Come back when you are all fueled up.";
-  } else if (time <= 8) {
-    timeMessage = "not study time. Go have fun or do something else.";
-  } else if (time <= 17) {
-    timeMessage =
-      "study time. Here is the link to some studying music: https://www.youtube.com/watch?v=e97w-GHsRMY";
-  }
-
-  return timeMessage;
-}
-
-const showTime = document.createElement("h1");
-showTime.innerText = `It is currently ${studyTime()}`;
-document.body.appendChild(showTime);
+let time = ''
 
 const assignments = ["devX", "learnTogetherX", "CodeAlongX", "caseStudyX"];
 
@@ -33,13 +12,17 @@ toDoDisplay.addEventListener("click", function () {
   document.body.appendChild(todoValue);
 });
 
-document
-  .querySelector("#name-input-text")
-  .addEventListener("submit", function (you) {
+document.querySelector("#name-input-text").addEventListener("submit", function (you) {
     you.preventDefault();
     const userGreeting = document.createElement("h1");
     userGreeting.innerHTML = `Welcome, ${you.target.elements.userName.value}. I hope you are having a good day today.`;
     document.body.appendChild(userGreeting);
+    
+    let time = you.target.elements.inputTime.value;
+
+    const timeGreeting = document.createElement("h1")
+    timeGreeting.innerHTML = `It is currently ${studyTime()}`
+    document.body.appendChild(timeGreeting)
   });
 
 const waterCheck = document.createElement("h1");
@@ -50,3 +33,11 @@ const mindCheck = document.createElement("h1");
 mindCheck.innerHTML =
   "If you are feeling frustrated or overwhelmed, try taking a break.";
 document.body.appendChild(mindCheck);
+
+// Local storage implementation and steps
+//Create localStorage.setItem
+//Read localStorage.getItem
+//Update localStorage.removeItem
+//Delete localStorage.clear
+
+
